@@ -10,7 +10,7 @@ console.info(`My name is ${myName}, and I'm ${age} years old!`);
 age = 4;
 console.info(`My name is ${myName}, and I'm ${age} years old!`);
 
-var jobTitle = '<span>Medic</span> generalist';
+// var jobTitle = '<span>Medic</span> generalist';
 
 var mottoElement = document.getElementById('motto');
 console.log(mottoElement);
