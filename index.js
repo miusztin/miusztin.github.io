@@ -1,61 +1,47 @@
-// console.error('app started');
+// function hide(id) {
+//   console.log('hide', id);
+//   document.getElementById(id).style.display = 'none';
+// }
+// function show(id) {
+//   console.warn('show', id);
+//   document.getElementById(id).style.display = 'block';
+// }
 
-// var myName = 'Tomita';
-// var age = 3;
+// function hideAllPages() {
+//   hide('languages');
+//   hide('skills');
+//   hide('projects');
+//   hide('home');
+// }
 
-// console.info(myName);
-// console.info(`My name is ${myName}, and I'm ${age} years old!`);
-// age = 2;
-// console.info(`My name is ${myName}, and I'm ${age} years old!`);
-// age = 4;
-// console.info(`My name is ${myName}, and I'm ${age} years old!`);
+// function showPage(id) {
+//   console.warn('Please show', id);
+//   hideAllPages();
+//   show(id);
+// }
+// showPage('home');
 
-// // var jobTitle = '<span>Medic</span> generalist';
+const pages = document.querySelectorAll('.page');
+//1-varianta forEach
+// function showPage(id) {
+//   pages.forEach((page) => {
+//     if (page.id === id) {
+//       page.classList = 'page visible';
+//     } else {
+//       page.classList = 'page invisible';
+//     }
+//   });
+// }
+// showPage('home');
 
-// var mottoElement = document.getElementById('motto');
-// console.log(mottoElement);
-
-// mottoElement.innerHTML += ' & ' + jobTitle;
-
-// console.log(jobTitle);
-
-// console.log(typeof document.getElementById);
-
-function hidePage(id) {
-  console.log('hide', id);
-  document.getElementById(id).style.display = 'none';
-}
+//2- varianta for of loop
 function showPage(id) {
-  console.warn('show', id);
-  document.getElementById(id).style.display = 'block';
+  for (let page of pages) {
+    if (page.id === id) {
+      page.classList = 'page visible';
+    } else {
+      page.classList = 'page invisible';
+    }
+  }
 }
-
-function showHomePage() {
-  hidePage('languages');
-  hidePage('skills');
-  hidePage('projects');
-  showPage('home');
-}
-
-function showSkillsPage() {
-  hidePage('home');
-  hidePage('projects');
-  hidePage('languages');
-  showPage('skills');
-}
-
-function showProjectsPage() {
-  showPage('projects');
-  hidePage('home');
-  hidePage('languages');
-  hidePage('skills');
-}
-
-function showLanguagesPage() {
-  hidePage('home');
-  hidePage('projects');
-  hidePage('skills');
-  showPage('languages');
-}
-
-showHomePage();
+showPage('home');

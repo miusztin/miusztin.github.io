@@ -6,6 +6,7 @@ p {
 #motto {
     text-align: right; 
     font-size: 30px;
+    margin-right: 3em;
 }
 #motto span {
     font-weight: bold;
@@ -69,14 +70,16 @@ p {
   }
   #side-menu {
     flex: 1;
+    margin: 1em ;
   }
   #main {
     flex: 2;
+    margin:0 2em;
   }
 
   form {
-    background-color: rgb(18, 6, 97);
-    border-color:rgb(18, 6, 97) ;
+    background-color: rgb(226, 222, 254);
+    border:1px solid rgb(18, 6, 97) ;
     border-radius: 0.5em;
     align-self: center;
     height: 2em;
@@ -86,10 +89,10 @@ p {
   }
 
   button {
-    background: none;
+    background: rgb(18, 6, 97);
     color: #e3ab29;
     border: 2px solid;
-    padding: 0.3em 0.8em;
+    padding: 0.3em 1.8em;
     font-size: 0.8em;
     transition: all 0.2s;
   }
@@ -123,4 +126,16 @@ p {
   }
   #header-info {
     flex: 1;
+  }
+
+  #avatar {
+    margin: 1em;
+  }
+
+  .page.visible {
+    display: block;
+  }
+
+  .page.invisible {
+    display: none;
   }
