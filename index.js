@@ -9,9 +9,11 @@ let activePage = 'home';
 function showPage(nextPage) {
   hide(activePage);
   show(nextPage);
-  document.getElementById('menu-' + activePage).classList.remove('active');
-  // document.getElementById(activePage).style.display = 'none';
-  document.getElementById('menu-' + nextPage).classList.add('active');
+  document
+    .querySelector(`a[data-page=${activePage}]`)
+    .classList.remove('active');
+  document.querySelector(`a[data-page=${nextPage}]`).classList.add('active');
+
   activePage = nextPage;
 }
 
@@ -20,7 +22,7 @@ function initEvents() {
     .getElementById('top-menu-bar')
     .addEventListener('click', function (e) {
       if (e.target.matches('a')) {
-        var id = e.target.id.substring(5);
+        var id = e.target.getAttribute('data-page');
         console.warn('click', id, e.target.matches('a'));
         showPage(id);
       }
@@ -29,3 +31,5 @@ function initEvents() {
 
 showPage(activePage);
 initEvents();
+
+document.querySelector('a[data-page=home]');
