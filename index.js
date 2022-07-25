@@ -1,25 +1,19 @@
-function hide(id) {
-  console.log('hide', id);
-  document.getElementById(id).style.display = 'none';
-}
+// function hide(id) {
+//   console.log('hide', id);
+//   document.getElementById(id).style.display = 'none';
+// }
 function show(id) {
   console.warn('show', id);
   document.getElementById(id).style.display = 'block';
 }
 
-function hideAllPages() {
-  hide('languages');
-  hide('skills');
-  hide('projects');
-  hide('home');
-}
 let activePage = 'home';
-function showPage(id) {
-  hideAllPages();
-  show(id);
+function showPage(nextPage) {
+  show(nextPage);
   document.getElementById('menu-' + activePage).classList.remove('active');
-  document.getElementById('menu-' + id).classList.add('active');
-  activePage = id;
+  document.getElementById(activePage).style.display = 'none';
+  document.getElementById('menu-' + nextPage).classList.add('active');
+  activePage = nextPage;
 }
 showPage(activePage);
 
